@@ -11,7 +11,7 @@ class NavBar extends Component {
     return (
     <section>
       {topics.map(topic=>(
-        <Link>
+        <Link to={`/topics/${topic.slug}`} >
         <span>{topic.slug}  </span>
         </Link>
       )
@@ -21,6 +21,7 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
+    console.log('NavBar componentDidMount...')
     api.getTopics().then(topics => {
       this.setState({
         topics: topics

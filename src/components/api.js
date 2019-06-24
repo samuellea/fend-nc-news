@@ -8,3 +8,11 @@ export const getTopics = (topic, author) => {
     return data.topics;
   })
 }
+
+export const getArticles = (topic, author) => {
+  return request.get('/articles', {params: {
+    topic: topic
+  }}).then(({data}) => {
+    return data.articles;
+  })
+}
