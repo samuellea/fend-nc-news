@@ -30,3 +30,10 @@ export const getArticleById = (article_id) => {
       }
     })
 }
+
+export const addCommentById = (article_id, newComment) => {
+  return request.post(`/articles/${article_id}/comments`, newComment)
+    .then(({data}) => {
+      return data;
+    })
+}

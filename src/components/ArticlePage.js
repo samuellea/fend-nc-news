@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from "axios";
 import * as api from './api';
 import CommentList from './CommentList';
+import Voter from './Voter';
 
 class ArticlePage extends Component {
   state = {
@@ -18,8 +18,10 @@ class ArticlePage extends Component {
         <h4>{article.author}</h4>
         <p>{article.body}</p>
         <br/>
+        <Voter votes={article.votes}/>
+        <br/>
         <h4 style={{textAlign: 'left', marginLeft: '2%'}}>Comments ({comments.length})</h4>
-        {comments.length > 0 ? <CommentList comments={comments}/> : null }
+        {comments.length > 0 ? <CommentList comments={comments} article_id={article.article_id}/> : null }
         </div>
     );
   }

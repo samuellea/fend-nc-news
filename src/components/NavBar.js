@@ -10,12 +10,22 @@ class NavBar extends Component {
     const {topics} = this.state
     return (
     <section>
-      {topics.map(topic=>(
-        <Link to={`/topics/${topic.slug}`} >
+      {topics.map((topic, i)=>(
+        <Link to={`/topics/${topic.slug}`} key={i} >
         <span>{topic.slug}  </span>
         </Link>
       )
       )}
+      <br/>
+      <>
+        <select>
+        <option value="hot">HOT</option>
+        <option value="new">NEW</option>
+        <option value="popular">POPULAR</option>
+        </select>
+  
+      </>
+     
     </section>
     );
   }

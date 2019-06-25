@@ -12,9 +12,14 @@ class ArticleList extends Component {
     const {articles} = this.state
     return (
     <section>
-      {articles.map(article=> (
-        <ArticleCard article={article} key={article.article_id}/>
-  ))}
+
+      {articles.map(article=> {
+        return (
+          <>
+          <ArticleCard article={article} key={article.article_id}/>
+          </>
+        )
+      })}
     </section>
     );
   }
@@ -27,7 +32,6 @@ class ArticleList extends Component {
   }
 
   componentDidMount() {
-    const {topic} = this.props
     this.fetchArticles();    
   }
 
