@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import * as api from './api'; // import all the functions from the api.js file as a variable called 'api'
+import * as api from './api';
+import ArticleCard from "./ArticleCard";
 
 class ArticleList extends Component {
 
@@ -12,27 +13,27 @@ class ArticleList extends Component {
     return (
     <section>
       {articles.map(article=> (
-        <p key={article._id}>{article.title}</p>
+        <ArticleCard article={article} key={article.article_id}/>
   ))}
     </section>
     );
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const {topic} = this.props
     if (prevProps.topic !== topic) {
-      api.getArticles(topic).then(articles => {
-        this.setState({
-          articles: articles
-        })
-      })
+      this.fetchArticles();
     }
   }
 
   componentDidMount() {
     const {topic} = this.props
+    this.fetchArticles();    
+  }
+
+  fetchArticles = () => {
+    const {topic} = this.props
     api.getArticles(topic).then(articles => {
-      console.log(articles, 'articles coming in during ArticleList componentDidMount')
       this.setState({
         articles: articles
       })

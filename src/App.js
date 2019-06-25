@@ -5,6 +5,7 @@ import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Home from "./components/Home";
 import ArticleList from "./components/ArticleList";
+import ArticlePage from "./components/ArticlePage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Router>
           <Home path="/" />
           <ArticleList path="/topics/:topic"/>
+          <ArticlePage path="/articles/:article_id" />
         </Router>
     </div>
   );
