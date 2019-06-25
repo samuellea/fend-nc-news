@@ -24,7 +24,7 @@ class ArticleList extends Component {
     );
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const {topic} = this.props
     if (prevProps.topic !== topic) {
       this.fetchArticles();

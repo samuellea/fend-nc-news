@@ -7,6 +7,7 @@ class CommentInput extends Component {
       username: 'jessjelly',
       body: ''
     },
+    buttonActive: false
   }
 
   handleSubmit = event => {
@@ -29,6 +30,7 @@ class CommentInput extends Component {
       const { newComment } = prevState;
       return {
         newComment: {...newComment, body: value},
+        buttonActive: true
       };
     });
   };
@@ -45,7 +47,7 @@ class CommentInput extends Component {
           value={this.state.newComment.body}
         />
       </label>
-      <button>Comment</button>
+      <button >Comment</button>
     </form>
     );
   }

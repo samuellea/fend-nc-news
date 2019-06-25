@@ -6,7 +6,7 @@ import Voter from './Voter';
 class ArticlePage extends Component {
   state = {
     article: {},
-    comments: [],
+    // comments: [],
     isLoading: true
   }
   render() {
@@ -20,8 +20,8 @@ class ArticlePage extends Component {
         <br/>
         <Voter votes={article.votes}/>
         <br/>
-        <h4 style={{textAlign: 'left', marginLeft: '2%'}}>Comments ({comments.length})</h4>
-        {comments.length > 0 ? <CommentList comments={comments} article_id={article.article_id}/> : null }
+        {/* {comments.length > 0 ? <CommentList comments={comments} article_id={article.article_id}/> : null } */}
+        <CommentList comments={comments} article_id={article.article_id}/>
         </div>
     );
   }
@@ -29,8 +29,8 @@ class ArticlePage extends Component {
   componentDidMount() {
     const { article_id } = this.props;
     api.getArticleById(article_id)
-    .then(({article, comments}) =>{
-      this.setState({article, comments, isLoading: false});
+    .then(({article}) =>{
+      this.setState({article, isLoading: false});
     })
 
   }

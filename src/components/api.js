@@ -18,16 +18,15 @@ export const getArticles = (topic, author) => {
 
 export const getArticleById = (article_id) => {
   return request.get(`/articles/${article_id}`)
+  .then(({data}) => {
+    return data;
+  })
+}
+
+export const getCommentsByArticleId = (article_id) => {
+  return request.get(`/articles/${article_id}/comments`)
     .then(({data}) => {
-      const commentPromise = () => {
-        return request.get(`/articles/${article_id}/comments`)
-      }
-      return Promise.all([data, commentPromise()])
-    }).then(articleAndComments => {
-      return {
-        article: articleAndComments[0].article,
-        comments: articleAndComments[1].data.comments
-      }
+      return data;
     })
 }
 

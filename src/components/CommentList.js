@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as api from './api';
 import CommentCard from "./CommentCard";
 import CommentInput from "./CommentInput";
 
@@ -10,6 +11,7 @@ class CommentList extends Component {
     const {comments} = this.state;
     return (
       <section>
+             <h4 style={{textAlign: 'left', marginLeft: '2%'}}>Comments ({comments.length})</h4>
         <CommentInput addNewComment={this.addNewComment} article_id={this.props.article_id}/>
       {comments.map(comment=> (
         <CommentCard comment={comment} key={comment.comment_id}/>
@@ -27,12 +29,13 @@ class CommentList extends Component {
       })
   }
 
-  componentDidUpdate() {
-  }
-
   componentDidMount() {
-    const {comments} = this.props;
-    this.setState({comments})
+    const {article_id} = this.props;
+    api.getCommentsByArticleId(article_id)
+    .then(({comments}) => {
+      this.setState({comments})
+    })
+
   }
 }
 
