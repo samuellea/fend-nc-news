@@ -1,7 +1,14 @@
-import React from "react";
+import React, { Component } from 'react';
 
-const Home = () => {
-  return <div>Welcome to NC News!</div>;
-};
+class Home extends Component {
+  state = {
+    articles: []
+  }
+  render() {
+    return (
+  <div>Welcome to NC News!</div>
+    );
+  }
+}
 
 export default Home;

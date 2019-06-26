@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Home from "./components/Home";
-import ArticleList from "./components/ArticleList";
+import ArticlesList from "./components/ArticlesList";
 import ArticlePage from "./components/ArticlePage";
 
 function App() {
@@ -13,8 +13,9 @@ function App() {
       <Header/>
       <NavBar />
       <Router>
-          <Home path="/" />
-          <ArticleList path="/topics/:topic"/>
+          {/* <Home path="/" /> */}
+          <ArticlesList path="/"/>
+          <ArticlesList path="/topics/:topic"/>
           <ArticlePage path="/articles/:article_id" />
         </Router>
     </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as api from './api';
 import ArticleCard from "./ArticleCard";
 
-class ArticleList extends Component {
+class ArticlesList extends Component {
 
   state = {
     articles: []
@@ -45,4 +45,4 @@ class ArticleList extends Component {
   }
 }
 
-export default ArticleList;
+export default ArticlesList;
