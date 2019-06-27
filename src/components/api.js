@@ -44,3 +44,17 @@ export const deleteCommentById = (comment_id) => {
     return response;
   })
 }
+
+export const patchVotes = (type, id, increment) => {
+  if (type === 'article') {
+  return request.patch(`/articles/${id}`, {inc_votes: increment}) // 2nd object going to be sent by axios as the body. same syntax as getArticles
+    .then(({data}) => {
+      return data.article
+    })
+  } else if (type === 'comment') {
+    return request.patch(`/comments/${id}`, {inc_votes: increment}) // 2nd object going to be sent by axios as the body. same syntax as getArticles
+    .then(({data}) => {
+      return data.comment
+    })
+  }
+}

@@ -10,19 +10,23 @@ class ArticlePage extends Component {
   }
   render() {
     const {article, comments, isLoading} = this.state;
-    const {loggedInUser} = this.props;
-    if (isLoading) return <p>Loading...</p>
+    const {loggedInUser, handleVoteInApp} = this.props;
     return (
+      <>
+      {isLoading ? 
+      <p>Loading...</p> :  
       <div>
-        <h3>{article.title}</h3>
-        <h4>{article.author}</h4>
-        <p>{article.body}</p>
-        <br/>
-        <Voter votes={article.votes}/>
-        <br/>
-        <CommentList comments={comments} article_id={article.article_id} loggedInUser={loggedInUser}/>
-        </div>
-    );
+      <h3>{article.title}</h3>
+      <h4>{article.author}</h4>
+      <p>{article.body}</p>
+      <br/>
+      <Voter votes={article.votes} article_id={article.article_id} handleVoteInApp={handleVoteInApp}/>
+      <br/>
+      <CommentList comments={comments} article_id={article.article_id} loggedInUser={loggedInUser} />
+      </div>
+      }
+      </>
+    )
   }
 
   componentDidMount() {

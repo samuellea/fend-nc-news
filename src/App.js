@@ -8,8 +8,13 @@ import ArticlePage from "./components/ArticlePage";
 
 class App extends Component {
   state = {
-    loggedInUser: 'jessjelly'
+    loggedInUser: 'jessjelly',
+    itemVotes: {
+      articles: [],
+      comments: []
+    }
   }
+
   render() {
     const {loggedInUser} = this.state
     return (
@@ -17,14 +22,36 @@ class App extends Component {
         <Header/>
         <NavBar />
         <Router>
-            <ArticlesList path="/"/>
-            <ArticlesList path="/topics/:topic"/>
-            <ArticlePage path="/articles/:article_id" loggedInUser={loggedInUser}/>
+            <ArticlesList path="/" handleVoteInApp={this.handleVoteInApp}/>
+            <ArticlesList path="/topics/:topic" handleVoteInApp={this.handleVoteInApp}/>
+            <ArticlePage path="/articles/:article_id" loggedInUser={loggedInUser} handleVoteInApp={this.handleVoteInApp}/>
           </Router>
       </div>
     );
   }
 
+  handleVoteInApp = (id) => {
+    console.log('reaching handleVote...')
+    console.log(id);
+  }
+
 }
 
 export default App;
+
+////////// example of finalised itemVotes state key...
+
+    // itemVotes: {
+    //   articles: [
+    //     {
+    //       article_id: 1,
+    //       voteChange: 1
+    //     }
+    //   ],
+    //   comments: [
+    //     {
+    //       comment_id: 9,
+    //       voteChange: -1
+    //     }
+    //   ]
+    // }

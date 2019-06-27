@@ -12,6 +12,7 @@ class ArticlesList extends Component {
 
   render() {
     const {articles, isLoading} = this.state
+    const {handleVoteInApp} = this.props
     return (
     <section>
       <br/>
@@ -24,7 +25,7 @@ class ArticlesList extends Component {
       {isLoading === true ? <p>Loading...</p> : articles.map(article=> {
         return (
           <>
-          <ArticleCard article={article} key={article.article_id}/>
+          <ArticleCard article={article} handleVoteInApp={handleVoteInApp} key={article.article_id} />
           </>
         )
       })}
