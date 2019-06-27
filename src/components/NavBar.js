@@ -15,17 +15,7 @@ class NavBar extends Component {
         <span>{topic.slug}  </span>
         </Link>
       )
-      )}
-      <br/>
-      <>
-        <select>
-        <option value="hot">HOT</option>
-        <option value="new">NEW</option>
-        <option value="popular">POPULAR</option>
-        </select>
-  
-      </>
-     
+      )}    
     </section>
     );
   }

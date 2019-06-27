@@ -4,7 +4,6 @@ import * as api from './api';
 class CommentInput extends Component {
   state = {
     newComment: {
-      username: 'jessjelly',
       body: ''
     }
   }
@@ -51,6 +50,14 @@ class CommentInput extends Component {
     );
   }
 
+  componentDidMount() {
+    this.setState({
+      newComment: {
+        username: this.props.loggedInUser,
+        body: ''
+      }
+    })
+  }
 }
 
 export default CommentInput;

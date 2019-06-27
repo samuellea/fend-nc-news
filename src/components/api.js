@@ -8,9 +8,10 @@ export const getTopics = (topic, author) => {
   })
 }
 
-export const getArticles = (topic, author) => {
+export const getArticles = (topic, sortBy) => {
   return request.get('/articles', {params: {
-    topic: topic
+    topic: topic,
+    sort_by: sortBy
   }}).then(({data}) => {
     return data.articles;
   })
@@ -35,4 +36,11 @@ export const addCommentById = (article_id, newComment) => {
     .then(({data}) => {
       return data;
     })
+}
+
+export const deleteCommentById = (comment_id) => {
+  console.log('reaching deleteCommentById function')
+  return request.delete(`/comments/${comment_id}`).then((response) => {
+    return response;
+  })
 }

@@ -9,12 +9,13 @@ class CommentList extends Component {
   }
   render() {
     const {comments} = this.state;
+    const {article_id, loggedInUser} = this.props;
     return (
       <section>
              <h4 style={{textAlign: 'left', marginLeft: '2%'}}>Comments ({comments.length})</h4>
-        <CommentInput addNewComment={this.addNewComment} article_id={this.props.article_id}/>
+        <CommentInput addNewComment={this.addNewComment} article_id={article_id} loggedInUser={loggedInUser}/>
       {comments.map(comment=> (
-        <CommentCard comment={comment} key={comment.comment_id}/>
+        <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} loggedInUser={loggedInUser}/>
   ))}
     </section>
     );
@@ -27,6 +28,29 @@ class CommentList extends Component {
           comments: [newComment, ...comments]
         }
       })
+  }
+
+  deleteComment = (comment_id) => {
+    const {comments} = this.state;
+
+    if (window.confirm('Are you sure you want to delete your comment?')) {
+      api.deleteCommentById(comment_id).catch(err => {
+        this.setState({
+          comments: comments
+        }, ()=>{
+          alert('Comment could not be deleted!')
+        })
+      })
+
+      let indexToDelete = comments.findIndex((comment)=> comment.comment_id === comment_id);
+      let commentsMinusDeleted = [...comments].reduce((acc, comment, i) => {
+        if (i !== indexToDelete) acc.push(comment);
+        return acc;
+      }, [])
+      this.setState({
+        comments: commentsMinusDeleted
+      })
+  } 
   }
 
   componentDidMount() {

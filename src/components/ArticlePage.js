@@ -6,11 +6,11 @@ import Voter from './Voter';
 class ArticlePage extends Component {
   state = {
     article: {},
-    // comments: [],
     isLoading: true
   }
   render() {
     const {article, comments, isLoading} = this.state;
+    const {loggedInUser} = this.props;
     if (isLoading) return <p>Loading...</p>
     return (
       <div>
@@ -20,8 +20,7 @@ class ArticlePage extends Component {
         <br/>
         <Voter votes={article.votes}/>
         <br/>
-        {/* {comments.length > 0 ? <CommentList comments={comments} article_id={article.article_id}/> : null } */}
-        <CommentList comments={comments} article_id={article.article_id}/>
+        <CommentList comments={comments} article_id={article.article_id} loggedInUser={loggedInUser}/>
         </div>
     );
   }
