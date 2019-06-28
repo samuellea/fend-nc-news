@@ -8,7 +8,7 @@ const CommentCard = ({comment, deleteComment, username, handleVoteInApp, loggedI
   }
 
   return (
-    <div style={{borderStyle: 'dotted', borderColor: 'lightgray', borderWidth: '2px', marginBottom: '10px', backgroundColor: '#fcfcfc'}}>
+    <div style={{borderStyle: 'dotted', borderColor: 'lightgray', borderWidth: '2px', marginBottom: '10px', backgroundColor: '#fcfcfc', width: '80%', marginLeft: 'auto', marginRight: 'auto'}}>
       <p style={{fontSize: '80%', textAlign: 'left', marginLeft: '2%'}}>🕑 {comment.created_at}
       <span style={{paddingLeft: '1%'}}><Voter votes={comment.votes} comment_id={comment.comment_id} handleVoteInApp={handleVoteInApp} loggedInUser={loggedInUser} key={`voter_${comment.comment_id}`}/></span>
       </p><b></b>

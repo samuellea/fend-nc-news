@@ -66,3 +66,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### BACK END repository for this site can be found at:
+
+https://github.com/samuellea/be-nc-news
+
+### BACK END of this site is HOSTED at:
+
+https://bend-nc-news.herokuapp.com/api

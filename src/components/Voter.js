@@ -10,11 +10,11 @@ class Voter extends Component {
     const {voteChange, clicked} = this.state;
     const {votes} = this.props
     return (
-      <>
-        <button onClick={()=> this.handleVote(1)} disabled={clicked > 0} className='up'>⬆</button> 
-        <button onClick={()=> this.handleVote(-1)} disabled={clicked < 0} className='down'>⬇</button>
+      <div style={{marginTop: '1.1%'}}>
+        <button onClick={()=> this.handleVote(1)} disabled={clicked > 0} className='up' style={{lineHeight: '30px', width: '5%', fontSize: '150%', textAlign: 'center', justifyContent: 'center'}}>⬆</button> 
+        <button onClick={()=> this.handleVote(-1)} disabled={clicked < 0} className='down' style={{lineHeight: '30px', width: '5%', fontSize: '150%', textAlign: 'center', justifyContent: 'center'}}>⬇</button>
           <span style={{paddingLeft: '10px'}}>Votes: <span style={{color: 'darkred', fontWeight: 'bold'}}>{votes + voteChange}</span></span>
-      </>
+      </div>
     );
   }
 

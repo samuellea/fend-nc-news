@@ -18,7 +18,7 @@ class ArticlePage extends Component {
     return (
       <>
       <div>
-      <h3>{article.title}</h3>
+      <h3 style={{fontSize: '150%'}}>{article.title}</h3>
       <h4>by {article.author}</h4>
       <p className='articleBody'>{article.body}</p>
       <br/>
@@ -26,7 +26,6 @@ class ArticlePage extends Component {
       <br/>
       <CommentList comments={comments} article_id={article.article_id} username={loggedInUser.username} />
       </div>
-
       </>
     )
   }

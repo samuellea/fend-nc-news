@@ -37,7 +37,7 @@ class CommentInput extends Component {
     return (
       <form onSubmit={this.handleSubmit} style={{marginBottom: '2%'}}>
       <label>
-        Enter your comment:
+        Enter your comment: 
         <input
           type="text"
           name="comment"
@@ -46,7 +46,7 @@ class CommentInput extends Component {
           style={{width: '50%', height: 48, backgroundColor: 'lavenderblush'}}
         />
       </label>
-      <button disabled={body.length === 0} style={{height: 48, marginLeft: '1%'}}>Comment</button>
+      <button disabled={body.length === 0} style={{height: 48, marginLeft: '1%', marginTop: '2%', color: 'white', backgroundColor: 'darkred', borderRadius: '3px'}}>Comment</button>
     </form>
     );
   }
