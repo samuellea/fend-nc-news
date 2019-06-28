@@ -53,7 +53,7 @@ class CommentInput extends Component {
   componentDidMount() {
     this.setState({
       newComment: {
-        username: this.props.loggedInUser,
+        username: this.props.username,
         body: ''
       }
     })

@@ -10,15 +10,17 @@ class CommentList extends Component {
   }
   render() {
     const {comments, isLoading} = this.state;
-    const {article_id, loggedInUser, handleVoteInApp} = this.props;
+    const {article_id, username} = this.props;
+    console.log(username, ' ====== username')
+
     return (
       <>
       {isLoading ? <p>Loading comments...</p> : 
         <section>
         <h4 style={{textAlign: 'left', marginLeft: '2%'}}>Comments ({comments.length})</h4>
-        <CommentInput addNewComment={this.addNewComment} article_id={article_id} loggedInUser={loggedInUser}/>
+        <CommentInput addNewComment={this.addNewComment} article_id={article_id} username={username}/>
            {comments.map(comment=> (
-              <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} loggedInUser={loggedInUser}/>
+              <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} username={username}/>
               ))}
         </section>
       }

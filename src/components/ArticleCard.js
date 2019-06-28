@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from "@reach/router";
 import Voter from './Voter';
 
-const ArticleCard = ({article, handleVoteInApp}) => {
+const ArticleCard = ({article}) => {
   return (
     <div>
         <p>_____________________________</p>
-      <Voter votes={article.votes} article_id={article.article_id} handleVoteInApp={handleVoteInApp}/>
+      <Voter votes={article.votes} article_id={article.article_id}/>
       <Link to={`../../articles/${article.article_id}`}>
         <p>{`${article.title}`}</p>
         <p style={{fontSize: 12}}><span>by {`${article.author}`}</span></p>
