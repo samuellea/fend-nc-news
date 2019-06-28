@@ -4,9 +4,9 @@ import { Link } from "@reach/router";
 
 const Header = () => {
   return (
-    <header>
-      <Link to={`/`}>
-    <h1>NORTHCODERS NEWS 🏠</h1>
+    <header className='header'>
+      <Link to={`/`} style={{ textDecoration: 'none', color: '#242424' }}>
+    <h1><span style={{color: 'darkred'}}>Ṋ</span>ORTHCODERS 🏠<br/><span style={{paddingLeft: '7%'}}><span style={{color: 'darkred'}}>&lt;</span>NEWS<span style={{color: 'darkred'}}>/&gt;</span></span></h1>
       </Link>
   </header>
   );

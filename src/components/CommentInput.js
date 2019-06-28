@@ -35,7 +35,7 @@ class CommentInput extends Component {
   render() {
     const {newComment: {body}} = this.state
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} style={{marginBottom: '2%'}}>
       <label>
         Enter your comment:
         <input
@@ -43,9 +43,10 @@ class CommentInput extends Component {
           name="comment"
           onChange={this.handleChange}
           value={this.state.newComment.body}
+          style={{width: '50%', height: 48, backgroundColor: 'lavenderblush'}}
         />
       </label>
-      <button disabled={body.length === 0}>Comment</button>
+      <button disabled={body.length === 0} style={{height: 48, marginLeft: '1%'}}>Comment</button>
     </form>
     );
   }

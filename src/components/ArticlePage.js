@@ -19,8 +19,8 @@ class ArticlePage extends Component {
       <>
       <div>
       <h3>{article.title}</h3>
-      <h4>{article.author}</h4>
-      <p>{article.body}</p>
+      <h4>by {article.author}</h4>
+      <p className='articleBody'>{article.body}</p>
       <br/>
       <Voter votes={article.votes} article_id={article.article_id} loggedInUser={loggedInUser} key={`voter_${article.article_id}`}/>
       <br/>

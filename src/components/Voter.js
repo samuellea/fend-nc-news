@@ -4,16 +4,16 @@ import * as api from './api';
 class Voter extends Component {
   state = {
     voteChange: 0,
-    wasClicked: false
+    clicked: 0
   }
   render() {
-    const {voteChange} = this.state;
+    const {voteChange, clicked} = this.state;
     const {votes} = this.props
     return (
       <>
-        <button onClick={()=> this.handleVote(1)} disabled={voteChange > 0}>⬆</button> 
-        <button onClick={()=> this.handleVote(-1)} disabled={voteChange < 0}>⬇</button>
-        Votes: {votes + voteChange}
+        <button onClick={()=> this.handleVote(1)} disabled={clicked > 0} className='up'>⬆</button> 
+        <button onClick={()=> this.handleVote(-1)} disabled={clicked < 0} className='down'>⬇</button>
+          <span style={{paddingLeft: '10px'}}>Votes: <span style={{color: 'darkred', fontWeight: 'bold'}}>{votes + voteChange}</span></span>
       </>
     );
   }
@@ -31,10 +31,10 @@ class Voter extends Component {
       })
     })
 
-    this.setState(({voteChange}) => { 
-      return {voteChange: voteChange + increment, wasClicked: true}
+    this.setState(({voteChange, clicked}) => {
+      return {voteChange: voteChange + increment, clicked: clicked + increment}
     }, ()=>{
-        localStorage.setItem(`voter_${type}_${article_id || comment_id}`, this.state.voteChange);
+        localStorage.setItem(`voter_${type}_${article_id || comment_id}`, this.state.clicked);
     }, )
   }
 
@@ -46,10 +46,11 @@ class Voter extends Component {
     if (comment_id) type = 'comment';
 
     let res = localStorage.getItem(`voter_${type}_${article_id || comment_id}`);
-    console.log(typeof res, '<-----=== res')
-    // this.setState({
-    //   voteChange: Number(res)
-    // })
+    console.log(res, '<=========', `voter_${type}_${article_id || comment_id}`)
+
+    this.setState({
+      clicked: Number(res)
+    })
   }
 }
 

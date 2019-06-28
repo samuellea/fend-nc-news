@@ -9,10 +9,10 @@ class NavBar extends Component {
   render() {
     const {topics} = this.state
     return (
-    <section>
+    <section className='navBar'>
       {topics.map((topic, i)=>(
-        <Link to={`/topics/${topic.slug}`} key={i} >
-        <span>{topic.slug}  </span>
+        <Link to={`/topics/${topic.slug}`} key={i} style={{ textDecoration: 'none', color: '#000000' }} >
+        <span className={`topic_${i}`} style={{fontSize: '150%'}}>{topic.slug}  </span>
         </Link>
       )
       )}    
@@ -27,6 +27,10 @@ class NavBar extends Component {
         topics: topics
       })
     })
+  }
+
+  componentDidUpdate() {
+    console.log('NAVBAR COMPONENTDIDUPDATE...')
   }
 }
 

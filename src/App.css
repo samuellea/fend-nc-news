@@ -1,3 +1,63 @@
 .App {
   text-align: center;
 }
+
+@font-face {
+  font-family: 'Gotham-Bold';
+  font-weight: 100;
+  src: local('Gotham-Bold'), url(./fonts/Gotham-Bold.otf) format('opentype');
+  color: '#242424';
+}
+
+.header {
+  font-size: 150%;
+}
+
+.navBar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999;
+  padding-bottom: 0.5%;
+}
+
+.sortDropdown {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid black;
+  padding-top: 1.1%;
+  z-index: 99;
+}
+
+.topic_0 {
+  color: darkred;
+}
+
+.topic_1 {
+  color: darkgreen;
+}
+
+.topic_2 {
+  color: darkblue;
+}
+
+.up:disabled,
+.up[disabled] {
+  border: 1px solid #999999;
+  background-color: green;
+  color: white;
+}
+
+.down:disabled,
+.down[disabled] {
+  border: 1px solid #999999;
+  background-color: darkred;
+  color: white;
+}
+
+.articleBody {
+  padding: 70px;
+}
