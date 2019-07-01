@@ -22,7 +22,11 @@ class ArticlePage extends Component {
       <h4>by {article.author}</h4>
       <p className='articleBody'>{article.body}</p>
       <br/>
+
+      <div className='articleVoter'>
       <Voter votes={article.votes} article_id={article.article_id} loggedInUser={loggedInUser} key={`voter_${article.article_id}`}/>
+      </div>
+
       <br/>
       <CommentList comments={comments} article_id={article.article_id} username={loggedInUser.username} />
       </div>
