@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  max-width: 100%;
 }
 
 @font-face {
@@ -26,7 +27,7 @@
 }
 
 .navBar {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -34,22 +35,24 @@
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
   font-size: 100%;
+
   padding-left: 25%;
   padding-right: 25%;
-  /* padding-top: 1%; */
-  /* padding-bottom: 1%; */
+
   display: flex;
   justify-content: space-between;
+
+  max-width: 100%;
 }
 
 .sortDropdown {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
   position: sticky;
   top: 5%;
   background-color: white;
   border-bottom: 1px solid #858585;
-  /* padding-top: 2%; */
   z-index: 99;
+  outline: none;
 }
 
 .sortDropdown:focus {
@@ -135,7 +138,7 @@
 
 .articlePageVoter {
   margin: auto;
-  width: 40%;
+  width: 25%;
   height: 100px;
   font-size: 200%;
 }
@@ -143,7 +146,7 @@
 .articleCardVote {
   margin: auto;
   padding-top: 1%;
-  width: 40%;
+  width: 20%;
   height: 100%;
 }
 
@@ -156,7 +159,8 @@
 }
 
 .commentVoter {
-  width: 25%;
+  padding-top: 1%;
+  width: 10%;
   height: 5%;
 }
 
@@ -201,8 +205,6 @@
   font-size: 200%;
 }
 
-/* } */
-
 @media (max-width: 479px) {
   .topic_0 {
     font-size: 125%;
@@ -217,8 +219,33 @@
   }
 
   .navBar {
-    margin-left: 0%;
-    margin-right: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin: 0%;
+  }
+
+  .sortDropdown {
+    top: 2.5%;
+  }
+
+  .articlePageVoter {
+    margin: auto;
+    width: 50%;
+    height: 100px;
+    font-size: 200%;
+  }
+
+  .articleCardVote {
+    margin: auto;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    width: 40%;
+    height: 100%;
+  }
+
+  .commentVoter {
+    width: 30%;
+    height: 5%;
   }
 }
 

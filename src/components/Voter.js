@@ -17,7 +17,9 @@ class Voter extends Component {
         <i className="fas fa-arrow-up" ></i>
         </span>
 
-          <span className='votesLabel'>Votes:</span> <span className='votesNumber'>{votes + voteChange}</span>
+          <span className='votesLabel'>Votes:</span> 
+          
+          <span className='votesNumber'>{votes + voteChange}</span>
 
           <span className={clicked < 0 ? "down-disabled" : "down"} onClick={()=> this.handleVote(-1)}>
         <i className="fas fa-arrow-down" ></i>

@@ -17,8 +17,6 @@ class NavBar extends Component {
       )
       )}    
 
-      {/* <div className='test'>test</div> */}
-
     </section>
     );
   }
