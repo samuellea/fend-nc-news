@@ -29,7 +29,11 @@ class ArticlePage extends Component {
       </div>
 
       <br/>
+      <div style={{textAlign: 'center'}}>
       <CommentList comments={comments} article_id={article.article_id} username={loggedInUser.username} />
+
+      </div>
+
       </div>
       </>
     )

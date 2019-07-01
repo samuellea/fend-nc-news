@@ -16,13 +16,25 @@ class CommentList extends Component {
     return (
       <>
       {isLoading ? <p>Loading comments...</p> : 
-        <section>
-        <h4 style={{textAlign: 'left', marginLeft: '2%'}}>Comments ({comments.length})</h4>
+
+      <div className="commentListContainer">
+
+        <div className="commentList-commentsNumber">
+        <h4 style={{textAlign: 'left', margin: 'auto', paddingBottom: '1%'}}>Comments ({comments.length})</h4>
+        </div>
+
+        <div className="commentList-commentInput">
         <CommentInput addNewComment={this.addNewComment} article_id={article_id} username={username}/>
-           {comments.map(comment=> (
-              <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} username={username}/>
-              ))}
-        </section>
+        </div>
+
+      </div>
+
+        // <section style={{width: '80%', margin: 'auto'}}>
+        //    {comments.map(comment=> (
+        //       <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} username={username}/>
+        //       ))}
+        // </section>
+
       }
       </>
     );

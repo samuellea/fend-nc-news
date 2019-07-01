@@ -64,7 +64,7 @@
   background-color: white;
   font-weight: bold;
   font-size: 200%;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-align: center;
   text-decoration: none;
   width: 100%;
@@ -88,7 +88,7 @@
   background-color: white;
   font-weight: bold;
   font-size: 200%;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-align: center;
   text-decoration: none;
   width: 100%;
@@ -112,7 +112,7 @@
   background-color: white;
   font-weight: bold;
   font-size: 200%;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-align: center;
   text-decoration: none;
   width: 100%;
@@ -160,6 +160,7 @@
 
 .commentVoter {
   padding-top: 1%;
+  padding-left: 65%;
   width: 10%;
   height: 5%;
 }
@@ -252,4 +253,30 @@
 img.loadingSpinner {
   width: 120px;
   height: auto;
+}
+
+/* .commentInputContainer {
+  background-color: red;
+  width: 100%;
+} */
+
+.commentListContainer {
+  background-color: paleturquoise;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 33.33%);
+  width: 80%;
+  margin: auto;
+}
+
+.commentList-commentsNumber {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.commentList-commentInput {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.commentList-commentsDisplay {
+  grid-area: 3 / 1 / 4 / 2;
 }

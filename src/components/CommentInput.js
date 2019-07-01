@@ -35,19 +35,27 @@ class CommentInput extends Component {
   render() {
     const {newComment: {body}} = this.state
     return (
-      <form onSubmit={this.handleSubmit} style={{marginBottom: '2%'}}>
+      
+      // <div className="commentInputContainer">
+      //   test
+      // </div>
+
+      <form onSubmit={this.handleSubmit} style={{marginBottom: '2%', textAlign: 'left'}}>
       <label>
-        <input
+        <textarea
+          // rows="5" 
+          // cols="5"
           type="text"
           name="comment"
           placeholder="Add a public comment..."
           onChange={this.handleChange}
           value={this.state.newComment.body}
-          style={{width: '50%', height: 48, backgroundColor: 'lavenderblush', fontSize: '100%'}}
+          style={{width: '90%', height: 50, backgroundColor: 'lavenderblush', fontSize: '100%', margin: 'auto'}}
         />
       </label>
-      <button disabled={body.length === 0} style={{height: 48, marginLeft: '1%', marginTop: '2%', color: 'white', backgroundColor: 'darkred', borderRadius: '3px'}}>Comment</button>
+      <button disabled={body.length === 0} style={{height: '100%', marginLeft: '1%', marginTop: '2%', color: 'white', backgroundColor: 'darkred', borderRadius: '3px', fontSize: '100%'}}>Comment</button>
     </form>
+
     );
   }
 
