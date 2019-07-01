@@ -13,17 +13,25 @@ class Voter extends Component {
 
 <div className='voter' >
 
-        <span className={clicked > 0 ? "up-disabled" : "up"} onClick={()=> this.handleVote(1)}>
+  <div className="voter-upArrow">
+  <span className={clicked > 0 ? "up-disabled" : "up"} onClick={()=> this.handleVote(1)}>
         <i className="fas fa-arrow-up" ></i>
         </span>
+  </div>
 
-          <span className='votesLabel'>Votes:</span> 
-          
-          <span className='votesNumber'>{votes + voteChange}</span>
+  <div className="voter-votesLabel">
+  <span>Votes:</span> 
+  </div>
 
-          <span className={clicked < 0 ? "down-disabled" : "down"} onClick={()=> this.handleVote(-1)}>
+  <div className="voter-votesNumber">
+  <span>{votes + voteChange}</span>
+  </div>
+
+  <div className="voter-downArrow">
+    <span className={clicked < 0 ? "down-disabled" : "down"} onClick={()=> this.handleVote(-1)}>
         <i className="fas fa-arrow-down" ></i>
         </span>
+  </div>
 
       </div>
 

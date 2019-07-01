@@ -58,3 +58,10 @@ export const patchVotes = (type, id, increment) => {
     })
   }
 }
+
+export const getUserById = user_id => {
+  return request.get(`/users/${user_id}`)
+  .then(({data}) => {
+    return data.user;
+  })
+}
