@@ -18,7 +18,7 @@ class ArticlePage extends Component {
     if (error) return <Error error={error}/>
     return (
       <>
-      <div>
+      <div className="articlePage">
       <h3 style={{fontSize: '150%'}}>{article.title}</h3>
       <h4>by {article.author}</h4>
       <p className='articleBody'>{article.body}</p>
@@ -31,7 +31,6 @@ class ArticlePage extends Component {
       <br/>
       <div style={{textAlign: 'center'}}>
       <CommentList comments={comments} article_id={article.article_id} username={loggedInUser.username} />
-
       </div>
 
       </div>

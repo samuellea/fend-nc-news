@@ -35,7 +35,7 @@ class CommentInput extends Component {
   render() {
     const {newComment: {body}} = this.state
     return (
-      
+
       // <div className="commentInputContainer">
       //   test
       // </div>
@@ -53,7 +53,7 @@ class CommentInput extends Component {
           style={{width: '90%', height: 50, backgroundColor: 'lavenderblush', fontSize: '100%', margin: 'auto'}}
         />
       </label>
-      <button disabled={body.length === 0} style={{height: '100%', marginLeft: '1%', marginTop: '2%', color: 'white', backgroundColor: 'darkred', borderRadius: '3px', fontSize: '100%'}}>Comment</button>
+      <button className="commentButton" disabled={body.length === 0}>Comment</button>
     </form>
 
     );

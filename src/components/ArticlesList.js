@@ -15,7 +15,10 @@ class ArticlesList extends Component {
   }
 
   render() {
+
     const {articles, isLoading, error} = this.state
+    const {topic} = this.props
+    console.log(topic, '******************')
     if (error) return (
       <section>
           <SortDropdown handleChange={this.handleChange}/>
@@ -24,7 +27,11 @@ class ArticlesList extends Component {
     )
     return (
     <section>
+
+      <div className={`topicBanner ${topic}`}>
         <SortDropdown handleChange={this.handleChange}/>
+      </div>
+
       {isLoading === true ? <img className="loadingSpinner" src={loadingSpinner} alt="loading..." /> : articles.map(article=> {
         return (
           <>
