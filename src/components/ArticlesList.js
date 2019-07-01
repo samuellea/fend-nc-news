@@ -26,7 +26,7 @@ class ArticlesList extends Component {
       </section>
     )
     return (
-    <section>
+    <section className="articlesList">
 
       <div className={`topicBanner ${topic}`}>
         <SortDropdown handleChange={this.handleChange}/>
@@ -42,6 +42,8 @@ class ArticlesList extends Component {
     </section>
     )
   }
+
+
   
   handleChange = (event) => {
     const {target: {value}} = event
