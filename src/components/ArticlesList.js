@@ -3,6 +3,7 @@ import * as api from './api';
 import ArticleCard from "./ArticleCard";
 import Error from './Error';
 import SortDropdown from './SortDropdown';
+import loadingSpinner from './Rolling-1s-200px.gif';
 
 class ArticlesList extends Component {
 
@@ -24,7 +25,7 @@ class ArticlesList extends Component {
     return (
     <section>
         <SortDropdown handleChange={this.handleChange}/>
-      {isLoading === true ? <p>Loading...</p> : articles.map(article=> {
+      {isLoading === true ? <img className="loadingSpinner" src={loadingSpinner} alt="loading..." /> : articles.map(article=> {
         return (
           <>
           <ArticleCard article={article} key={article.article_id} />

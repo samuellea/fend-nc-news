@@ -3,6 +3,7 @@ import * as api from './api';
 import CommentList from './CommentList';
 import Voter from './Voter';
 import Error from './Error';
+import loadingSpinner from './Rolling-1s-200px.gif';
 
 class ArticlePage extends Component {
   state = {
@@ -13,7 +14,7 @@ class ArticlePage extends Component {
   render() {
     const {article, comments, isLoading, error} = this.state;
     const {loggedInUser} = this.props;
-    if (isLoading) return <p>Loading...</p>
+    if (isLoading) return <img className="loadingSpinner" src={loadingSpinner} alt="loading..." />
     if (error) return <Error error={error}/>
     return (
       <>

@@ -11,11 +11,14 @@ class NavBar extends Component {
     return (
     <section className='navBar'>
       {topics.map((topic, i)=>(
-        <Link to={`/topics/${topic.slug}`} key={i} >
-        <span className={`topic_${i}`} >{topic.slug}  </span>
+        <Link to={`/topics/${topic.slug}`} className={`topic_${i}`}key={i} >
+        <span >{topic.slug}  </span>
         </Link>
       )
       )}    
+
+      {/* <div className='test'>test</div> */}
+
     </section>
     );
   }
