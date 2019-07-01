@@ -11,8 +11,8 @@ class NavBar extends Component {
     return (
     <section className='navBar'>
       {topics.map((topic, i)=>(
-        <Link to={`/topics/${topic.slug}`} key={i} style={{ textDecoration: 'none', color: '#000000', letterSpacing: '5px', fontWeight: 'bold' }} >
-        <span className={`topic_${i}`} style={{fontSize: '150%'}}>{topic.slug}  </span>
+        <Link to={`/topics/${topic.slug}`} key={i} >
+        <span className={`topic_${i}`} >{topic.slug}  </span>
         </Link>
       )
       )}    

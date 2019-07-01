@@ -23,7 +23,7 @@ class ArticlePage extends Component {
       <p className='articleBody'>{article.body}</p>
       <br/>
 
-      <div className='articleVoter'>
+      <div className='articlePageVoter'>
       <Voter votes={article.votes} article_id={article.article_id} loggedInUser={loggedInUser} key={`voter_${article.article_id}`}/>
       </div>
 

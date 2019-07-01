@@ -12,16 +12,25 @@ class Voter extends Component {
     return (
 
 <div className='voter' >
-        <button onClick={()=> this.handleVote(1)} disabled={clicked > 0} className='up' style={{fontSize: '150%', textAlign: 'center', justifyContent: 'center'}}>⬆</button> 
+
+        <span className={clicked > 0 ? "up-disabled" : "up"} onClick={()=> this.handleVote(1)}>
+        <i className="fas fa-arrow-up" ></i>
+        </span>
 
           <span className='votesLabel'>Votes:</span> <span className='votesNumber'>{votes + voteChange}</span>
 
-        <button onClick={()=> this.handleVote(-1)} disabled={clicked < 0} className='down' style={{fontSize: '150%', textAlign: 'center', justifyContent: 'center'}}>⬇</button>
-      </div>
+          <span className={clicked < 0 ? "down-disabled" : "down"} onClick={()=> this.handleVote(-1)}>
+        <i className="fas fa-arrow-down" ></i>
+        </span>
 
+      </div>
 
     );
   }
+
+
+
+
 
   handleVote = (increment) => {
     const {article_id, comment_id} = this.props; // check - article_id or comment_id?
@@ -37,8 +46,11 @@ class Voter extends Component {
     })
 
     this.setState(({voteChange, clicked}) => {
+      console.log(increment, '<--- increment!')
+      console.log(clicked, '<---- clicked!')
       return {voteChange: voteChange + increment, clicked: clicked + increment}
     }, ()=>{
+      console.log(this.state);
         localStorage.setItem(`voter_${type}_${article_id || comment_id}`, this.state.clicked);
     }, )
   }
