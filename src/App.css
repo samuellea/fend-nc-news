@@ -32,6 +32,10 @@
   z-index: 99;
 }
 
+.sortDropdown:focus {
+  outline: none;
+}
+
 .topic_0 {
   color: darkred;
   opacity: 1;
