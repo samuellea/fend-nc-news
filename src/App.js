@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Router } from "@reach/router";
-import './App.css';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import ArticlesList from "./components/ArticlesList";
 import ArticlePage from "./components/ArticlePage";
 import Error from './components/Error';
+import './styles/App.css';
 
 class App extends Component {
   state = {

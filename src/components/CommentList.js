@@ -11,7 +11,6 @@ class CommentList extends Component {
   render() {
     const {comments, isLoading} = this.state;
     const {article_id, username} = this.props;
-    console.log(username, ' ====== username')
 
     return (
       <>
@@ -66,7 +65,6 @@ class CommentList extends Component {
   }
 
   componentDidMount() {
-    console.log('CommentList componentDidMount...')
     const {article_id} = this.props;
     api.getCommentsByArticleId(article_id)
     .then(({comments}) => {

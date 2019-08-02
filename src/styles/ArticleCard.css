@@ -1,0 +1,63 @@
+.articleCard {
+  border-style: dotted;
+  border-color: lightgray;
+  border-width: 2px;
+  margin-top: 10px;
+  background-color: #fcfcfc;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #e9f5f4;
+  height: 25vh;
+  display: grid;
+  grid-template: 33.33% 33.33% 33.33% / 15vw 1fr;
+}
+
+/* mobile styling */
+@media (max-width: 479px) {
+  .articleCard {
+    border-style: dotted;
+    border-color: lightgray;
+    border-width: 2px;
+    margin-top: 10px;
+    background-color: #fcfcfc;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: green;
+    height: 25vh;
+    display: grid;
+    grid-template: 33.33% 33.33% 33.33% / 15vw 1fr;
+  }
+}
+
+.articleCardVote {
+  grid-area: 1 / 1 / 4 / 2;
+  background-color: red;
+  /* margin: auto;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  height: 100%;
+  background-color: #fcf7fc; */
+}
+
+.articleTitle {
+  /* width: 75%;
+  font-size: 150%;
+  margin: 0%; */
+  background-color: palegoldenrod;
+}
+
+.articleAuthor {
+  /* font-size: 100%; */
+  background-color: lightgoldenrodyellow;
+}
+
+.timeToDisplay {
+  /* font-size: 80%; */
+  background-color: lightyellow;
+}
+
+.comments {
+  padding-left: 1.5%;
+}

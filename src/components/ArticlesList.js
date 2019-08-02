@@ -3,7 +3,8 @@ import * as api from './api';
 import ArticleCard from "./ArticleCard";
 import Error from './Error';
 import SortDropdown from './SortDropdown';
-import loadingSpinner from './Rolling-1s-200px.gif';
+import loadingSpinner from '../Rolling-1s-200px.gif';
+
 
 class ArticlesList extends Component {
 
@@ -18,7 +19,6 @@ class ArticlesList extends Component {
 
     const {articles, isLoading, error} = this.state
     const {topic} = this.props
-    console.log(topic, '******************')
     if (error) return (
       <section>
           <SortDropdown handleChange={this.handleChange}/>
@@ -53,7 +53,6 @@ class ArticlesList extends Component {
   }
   
   componentDidUpdate(prevProps, prevState) {
-    console.log('componentDidUpdate...')
     const topicChange = prevProps.topic !== this.props.topic;
     const sortByChange = prevState.sortBy !== this.state.sortBy;
     const {topic} = this.props
@@ -76,7 +75,6 @@ class ArticlesList extends Component {
   }
   
   componentDidMount() {
-    console.log('componentDidMount')
     this.fetchArticles();    
   }
   
@@ -90,17 +88,9 @@ class ArticlesList extends Component {
         isLoading: false
       })
     }).catch(err => {
-      this.setState({isLoading: false, error: err}) // or the error itself
+      this.setState({isLoading: false, error: err})
     })
   }
 }
 
 export default ArticlesList;
-
-{/* <br/>
-  <select id="sortBy-dropdown" onChange={this.handleChange}>
-  <option value="created_at" selected="selected">CREATED AT</option>
-  <option value="votes" >VOTES</option>
-  <option value="comment_count">COMMENT COUNT</option>
-  </select>
-<br/> */}

@@ -38,12 +38,8 @@ class Voter extends Component {
     );
   }
 
-
-
-
-
   handleVote = (increment) => {
-    const {article_id, comment_id} = this.props; // check - article_id or comment_id?
+    const {article_id, comment_id} = this.props;
 
     let type;
     if (article_id) type = 'article';
@@ -56,11 +52,8 @@ class Voter extends Component {
     })
 
     this.setState(({voteChange, clicked}) => {
-      console.log(increment, '<--- increment!')
-      console.log(clicked, '<---- clicked!')
       return {voteChange: voteChange + increment, clicked: clicked + increment}
     }, ()=>{
-      console.log(this.state);
         localStorage.setItem(`voter_${type}_${article_id || comment_id}`, this.state.clicked);
     }, )
   }
@@ -73,7 +66,6 @@ class Voter extends Component {
     if (comment_id) type = 'comment';
 
     let res = localStorage.getItem(`voter_${type}_${article_id || comment_id}`);
-    console.log(res, '<=========', `voter_${type}_${article_id || comment_id}`)
 
     this.setState({
       clicked: Number(res)

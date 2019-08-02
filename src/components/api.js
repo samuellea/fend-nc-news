@@ -39,7 +39,6 @@ export const addCommentById = (article_id, newComment) => {
 }
 
 export const deleteCommentById = (comment_id) => {
-  console.log('reaching deleteCommentById function')
   return request.delete(`/comments/${comment_id}`).then((response) => {
     return response;
   })

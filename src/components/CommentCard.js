@@ -36,6 +36,7 @@ const CommentCard = ({comment, deleteComment, username, handleVoteInApp, loggedI
       <div className="commentInfo">
       <span style={{fontWeight: 'bold'}}>{comment.author} </span> <span style={{color: 'grey', marginLeft: '0.5%'}}>  🕑{toDisplay}</span><span style={{paddingLeft: '1%'}}>{comment.author === username ? <button onClick={handleClick} style={{color: 'darkred'}}>delete</button> : null}</span>
       </div>
+
       <div className="commentBody">
 {comment.body}
       </div>

@@ -22,16 +22,11 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
-    console.log('NavBar componentDidMount...')
     api.getTopics().then(topics => {
       this.setState({
         topics: topics
       })
     })
-  }
-
-  componentDidUpdate() {
-    console.log('NAVBAR COMPONENTDIDUPDATE...')
   }
 }
 

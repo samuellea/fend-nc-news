@@ -3,7 +3,8 @@ import * as api from './api';
 import CommentList from './CommentList';
 import Voter from './Voter';
 import Error from './Error';
-import loadingSpinner from './Rolling-1s-200px.gif';
+import loadingSpinner from '../Rolling-1s-200px.gif';
+
 const moment = require('moment');
 
 class ArticlePage extends Component {
@@ -30,14 +31,12 @@ class ArticlePage extends Component {
   <div className="articleMain">
 
     <div className="titleDiv">
-      {/* title div */}
       <div className="articleTitle">
        {article.title.toUpperCase()}
       </div>
     </div>
 
     <div className="infoDiv">
-      {/* info div (extra space) */}
       <div className="avatarAuthorDate">
         <div className="avatar">
         <img src={avatar_url} className="avatarImg"/>
@@ -55,9 +54,6 @@ class ArticlePage extends Component {
 
     </div>
     <br/>
-    <div className="bodyDiv">
-    {article.body}
-    </div>
 
   </div>
 
@@ -66,9 +62,6 @@ class ArticlePage extends Component {
 
       <br/>
 
-      {/* <div className='articlePageVoter'>
-      <Voter votes={article.votes} article_id={article.article_id} loggedInUser={loggedInUser} key={`voter_${article.article_id}`}/>
-      </div> */}
 
       <br/>
       <div style={{textAlign: 'center'}}>
