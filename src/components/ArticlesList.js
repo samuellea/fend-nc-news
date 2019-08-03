@@ -3,8 +3,6 @@ import * as api from './api';
 import ArticleCard from "./ArticleCard";
 import Error from './Error';
 import SortDropdown from './SortDropdown';
-import loadingSpinner from '../Rolling-1s-200px.gif';
-
 
 class ArticlesList extends Component {
 
