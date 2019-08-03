@@ -15,7 +15,7 @@ class Voter extends Component {
 
   <div className="voter-upArrow">
   <span className={clicked > 0 ? "up-disabled" : "up"} onClick={()=> this.handleVote(1)}>
-        <i className="fas fa-arrow-up" ></i>
+        <i className="fas fa-angle-up" ></i>
         </span>
   </div>
 
@@ -29,7 +29,7 @@ class Voter extends Component {
 
   <div className="voter-downArrow">
     <span className={clicked < 0 ? "down-disabled" : "down"} onClick={()=> this.handleVote(-1)}>
-        <i className="fas fa-arrow-down" ></i>
+        <i className="fas fa-angle-down" ></i>
         </span>
   </div>
 

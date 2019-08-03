@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import * as api from './api';
 import CommentCard from "./CommentCard";
 import CommentInput from "./CommentInput";
+import '../styles/CommentList.css';
+
 
 class CommentList extends Component {
   state = {
@@ -16,12 +18,8 @@ class CommentList extends Component {
       <>
       {isLoading ? <p>Loading comments...</p> : 
 
-      // <div className="commentListContainer">
-      //   TEST
-      // </div>
-
-        <section style={{width: '80%', margin: 'auto'}}>
-        <h4 style={{textAlign: 'left', margin: 'auto', paddingBottom: '1%'}}>Comments ({comments.length})</h4>
+        <section className="commentList">
+        <h4 className="commentsHeader">Comments ({comments.length})</h4>
         <CommentInput addNewComment={this.addNewComment} article_id={article_id} username={username}/>
            {comments.map(comment=> (
               <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} username={username}/>

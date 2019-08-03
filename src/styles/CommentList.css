@@ -1,0 +1,16 @@
+.commentList {
+  width: 80%;
+  /* margin: auto; */
+  /* border-top: 1px solid lightgray; */
+  /* background-color: lightblue; */
+  padding-right: 8.5%;
+  padding-left: 8.5%;
+}
+
+.commentsHeader {
+  text-align: left;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 8.5%;
+}

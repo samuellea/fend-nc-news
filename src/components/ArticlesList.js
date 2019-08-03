@@ -32,7 +32,11 @@ class ArticlesList extends Component {
         <SortDropdown handleChange={this.handleChange}/>
       </div>
 
-      {isLoading === true ? <img className="loadingSpinner" src={loadingSpinner} alt="loading..." /> : articles.map(article=> {
+      {isLoading === true ? 
+      // <img className="loadingSpinner" src={loadingSpinner} alt="loading..." /> 
+      <div class="loader">Loading...</div>
+      : 
+      articles.map(article=> {
         return (
           <>
           <ArticleCard article={article} key={article.article_id} />

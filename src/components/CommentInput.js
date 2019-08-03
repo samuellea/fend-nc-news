@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as api from './api';
+import '../styles/CommentInput.css';
+
 
 class CommentInput extends Component {
   state = {
@@ -36,24 +38,25 @@ class CommentInput extends Component {
     const {newComment: {body}} = this.state
     return (
 
-      // <div className="commentInputContainer">
-      //   test
-      // </div>
+      <form onSubmit={this.handleSubmit} className="commentInputForm">
 
-      <form onSubmit={this.handleSubmit} style={{marginBottom: '2%', textAlign: 'left'}}>
-      <label>
+      {/* <label> */}
         <textarea
-          // rows="5" 
-          // cols="5"
           type="text"
           name="comment"
           placeholder="Add a public comment..."
           onChange={this.handleChange}
           value={this.state.newComment.body}
-          style={{width: '90%', height: 50, backgroundColor: 'lavenderblush', fontSize: '100%', margin: 'auto'}}
+          className="commentInputTextArea"
         />
-      </label>
-      <button className="commentButton" disabled={body.length === 0}>Comment</button>
+      {/* </label> */}
+     
+
+      <div className="commentButtonContainer">
+        <button className="commentButton" disabled={body.length === 0}>Comment</button>
+      </div>
+
+
     </form>
 
     );

@@ -2,9 +2,7 @@
 
 A Reddit-style news aggregation and discussion board, built with React.js, Reach/Router and CSS. Users can post comments, as well as upvoting/downvoting articles and comments.
 
-The back end for this project can be found here -
-Heroku: [INSERT LINK HERE]
-Github: https://github.com/samuellea/be_nc_news/
+See the end of this README for links to the back end of this project.
 
 ## Getting started
 
@@ -34,7 +32,7 @@ View the deployed application, hosted on Netlify here: [INSERT LINK HERE]
 
 ### Heroku
 
-The back end API for this project is hosted on Heroku: [INSERT LINK HERE]
+The back end API for this project is hosted on Heroku: https://bend-nc-news.herokuapp.com/
 
 ### Github
 
