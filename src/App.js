@@ -15,17 +15,17 @@ class App extends Component {
   }
 
   render() {
-    const {loggedInUser} = this.state;
+    const { loggedInUser } = this.state;
     return (
-      <div className="App">
-        <Header/>
+      <div className="App" onScroll={this.handleScroll}>
+        <Header />
         <NavBar />
         <Router>
-            <ArticlesList path="/"/>
-            <ArticlesList path="/topics/:topic"/>
-            <ArticlePage path="/articles/:article_id" loggedInUser={loggedInUser}/>
-            <Error default /> 
-          </Router>
+          <ArticlesList path="/" />
+          <ArticlesList path="/topics/:topic" />
+          <ArticlePage path="/articles/:article_id" loggedInUser={loggedInUser} />
+          <Error default />
+        </Router>
       </div>
     );
   }

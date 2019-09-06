@@ -1,10 +1,8 @@
 .commentList {
   width: 80%;
-  /* margin: auto; */
-  /* border-top: 1px solid lightgray; */
-  /* background-color: lightblue; */
   padding-right: 8.5%;
   padding-left: 8.5%;
+  animation: articleFade 750ms ease-in-out 0s both;
 }
 
 .commentsHeader {
@@ -13,4 +11,24 @@
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 8.5%;
+}
+
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+
+@media (max-width: 479px) {
+  
+.commentList {
+  margin-top: 0vw;
+}
+
+.commentsHeader {
+  text-align: left;
+  margin: 0%;
+  padding-top: 0%;
+  padding-bottom: 1vw;
+  padding-left: 0%;
+}
+
 }

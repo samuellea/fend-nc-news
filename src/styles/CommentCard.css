@@ -1,13 +1,11 @@
 .commentMainContainer-outer {
   border-width: 2px;
   border-radius: 10px;
-  /* background-color: pink; */
   width: 100%;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
   color: #474747;
-  /* color: red; */
 }
 
 .commentMainContainer-inner {
@@ -15,8 +13,6 @@
   grid-template-columns: 5vw 5fr;
   grid-template-rows: 5vh 1fr;
   text-align: left;
-  /* padding: 1.5%; */
-  /* background-color: paleturquoise; */
 }
 
 .commentVoter {
@@ -24,13 +20,11 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* background-color: red; */
 }
 
 .commentInfo {
   grid-area: 1 / 2 / 2 / 6;
   padding-left: 2.5%;
-  /* background-color: palegoldenrod; */
   display: flex;
   align-items: center;
 }
@@ -39,7 +33,6 @@
   grid-area: 2 / 2 / 3 / 6;
   padding-left: 2.5%;
   font-size: 14px;
-  /* background-color: lightyellow; */
 }
 
 .commentAuthorInfo {
@@ -47,16 +40,30 @@
 }
 
 .commentDateTime {
-  /* color: grey; */
+  font-size: 12px;
   margin-left: 0.5%;
+  position: relative;
 }
 
 .commentDeleteButtonContainer {
-  padding-left: 1%;
+  margin-left: 0.5vw;
 }
 
 .commentDeleteButton {
+  height: 100%;
+  width: 100%;
+  background-color: white;
   color: darkred;
+  border-radius: 100px;
+  font-size: 100%;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.commentDeleteButton:hover {
+  background-color: darkred;
+  color: white
 }
 
 .commentDividerContainer {
@@ -73,4 +80,41 @@
   height: 10px;
   color: white;
   border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+
+@media (max-width: 479px) {
+  
+  .commentMainContainer-inner {
+    grid-template-rows: 8vw 1fr;
+    grid-column-gap: 5.5vw;
+  }
+
+  .commentVoter {
+    width: 30%;
+    height: 5%;
+    margin-left: 2.7vw;
+  }
+
+  .commentDateTime {
+    font-size: 12px;
+    margin-left: 4px;
+    position: relative;
+    top: 1px;
+  }
+
+  .commentInfo {
+    position: relative;
+    bottom: 1.25vw;
+  }
+
+  .commentBody {
+    position: relative;
+    bottom: 1.25vw;
+    font-weight: 300;
+  }
+
 }

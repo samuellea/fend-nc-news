@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import * as api from './api';
 import { Link } from "@reach/router";
+import '../styles/NavBar.css';
 
 class NavBar extends Component {
   state = {
     topics: []
   }
   render() {
-    const {topics} = this.state
+    const { topics } = this.state
     return (
-    <section className='navBar'>
-      {topics.map((topic, i)=>(
-        <Link to={`/topics/${topic.slug}`} className={`topic_${i}`}key={i} >
-        <span >{topic.slug}  </span>
-        </Link>
-      )
-      )}    
+      <section className='navBar'>
+        {topics.map((topic, i) => (
+          <Link to={`/topics/${topic.slug}`} className={`topic_${i}`} key={i} >
+            <span >{topic.slug}  </span>
+          </Link>
+        )
+        )}
 
-    </section>
+      </section>
     );
   }
 

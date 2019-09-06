@@ -1,0 +1,128 @@
+.navBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  font-size: 100%;
+  padding-left: 25%;
+  padding-right: 25%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.4%;
+  box-shadow: 0px 8px 6px -6px #a7a7a7;
+}
+
+.topic_0 {
+  color: #c08b87;
+  background-color: white;
+  font-weight: bold;
+  font-size: 2.5vw;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 3px;
+  border-radius: 3px;
+  transition: 0.3s;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
+.topic_0:hover {
+  color: white;
+  background-color: #C08B87;
+  border-radius: 3px;
+}
+
+.topic_1 {
+  color: #95b08d;
+  background-color: white;
+  font-weight: bold;
+  font-size: 2.5vw;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 3px;
+  border-radius: 3px;
+  width: '100px';
+  transition: 0.3s;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
+.topic_1:hover {
+  color: white;
+  background-color: #95b08d;
+  border-radius: 3px;
+
+}
+
+.topic_2 {
+  color: #8086c4;
+  background-color: white;
+  font-weight: bold;
+  font-size: 2.5vw;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 3px;
+  border-radius: 3px;
+  width: '100px';
+  transition: 0.3s;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+}
+
+.topic_2:hover {
+  color: white;
+  background-color: #8086c4;
+  border-radius: 3px;
+}
+
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+
+@media (max-width: 479px) {
+
+  .navBar {
+    background-color: white;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin: 0%;
+    top: 0%;
+    z-index: 9999;
+    line-height: 7.5vw;
+    padding-bottom: 0%;
+  }
+
+  .topic_0 {
+    font-size: 125%;
+  }
+
+  .topic_0:hover {
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+
+  .topic_1 {
+    font-size: 125%;
+  }
+
+  .topic_1:hover {
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+
+  .topic_2 {
+    font-size: 125%;
+  }
+
+  .topic_2:hover {
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  
+}

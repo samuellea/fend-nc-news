@@ -12,13 +12,13 @@ class CommentInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    api.addCommentById(this.props.article_id, this.state.newComment).then(({comment}) => {
+    api.addCommentById(this.props.article_id, this.state.newComment).then(({ comment }) => {
       this.props.addNewComment(comment)
-    }).then(()=>{
+    }).then(() => {
       this.setState(prevState => {
-        const {newComment} = prevState
+        const { newComment } = prevState
         return {
-          newComment: {...newComment, body: '' }
+          newComment: { ...newComment, body: '' }
         }
       })
     })
@@ -29,18 +29,15 @@ class CommentInput extends Component {
     this.setState(prevState => {
       const { newComment } = prevState;
       return {
-        newComment: {...newComment, body: value},
+        newComment: { ...newComment, body: value },
       };
     });
   };
 
   render() {
-    const {newComment: {body}} = this.state
+    const { newComment: { body } } = this.state
     return (
-
       <form onSubmit={this.handleSubmit} className="commentInputForm">
-
-      {/* <label> */}
         <textarea
           type="text"
           name="comment"
@@ -49,16 +46,12 @@ class CommentInput extends Component {
           value={this.state.newComment.body}
           className="commentInputTextArea"
         />
-      {/* </label> */}
-     
 
-      <div className="commentButtonContainer">
-        <button className="commentButton" disabled={body.length === 0}>Comment</button>
-      </div>
+        <div className="commentButtonContainer">
+          <button className="commentButton" disabled={body.length === 0}>Comment</button>
+        </div>
 
-
-    </form>
-
+      </form>
     );
   }
 
@@ -70,6 +63,7 @@ class CommentInput extends Component {
       }
     })
   }
+
 }
 
 export default CommentInput;

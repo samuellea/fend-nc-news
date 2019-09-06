@@ -1,0 +1,166 @@
+.dropdown-label {
+  position: relative;
+  bottom: 0.5px;
+}
+
+.container {
+  position: relative;
+  color: #474747;
+  width: 200px;
+  border: 1px solid;
+  border-color: lightgray;
+  border-radius: 5px;
+  background-color: white;
+  height: 23px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 23px;
+  margin-left: 3px;
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.menuOpen {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-color: white;
+}
+
+.overlay-menuClosed {
+  position: absolute;
+  bottom: 100%;
+  left: -1px;
+  right: 0;
+  top: 20px;
+  overflow: hidden;
+  width: 202px;
+  height:0;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.25, 0.25, 0.5, 1.0);
+}
+
+.overlay-menuOpen {
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  right: 0;
+  top: 20px;
+  overflow: hidden;
+  width: 202px;
+  height: 73px;
+  transition: 0.25s;
+  transition-timing-function: cubic-bezier(0.25, 0.25, 0.5, 1.0);
+}
+
+.btn-group {
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid;
+  border-top: none;
+  border-color: lightgray;
+  height: 70px;
+  overflow: hidden;
+  top: 2px;
+}
+
+.btn-group button {
+  height: 23px;
+  color: #474747;
+  background-color: white;
+  font-size: 12px;
+  border: none;
+  width: 200px;
+  font-weight: 300;
+  overflow: hidden;
+  outline: 1px darkred;
+}
+
+.btn-group button:hover {
+  color: white;
+  background-color: darkred;
+  width: 200px;
+  z-index: 1;
+}
+
+#button-true {
+  color: darkred;
+  font-weight: 400;
+}
+
+#button-true:hover {
+  color: white;
+}
+
+.order-arrow-container-asc {
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.01, 0.1, 0.1, 1.0);
+  position: relative;
+  bottom: 1px;
+  margin-left: 5px;
+}
+
+.order-arrow-container-desc {
+  transform: rotateZ(-180deg);
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.01, 0.1, 0.1, 1.0);
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
+}
+
+.order-description {
+  padding-left: 5px;
+  font-size: 12px;
+  position: relative;
+  left: 0px;
+  width: 20px;
+  font-weight: 500;
+}
+
+
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+/* ---------------- mobile styling ---------------- */
+
+@media (max-width: 479px) {
+
+  .dropdown-label {
+    position: relative;
+    bottom: 0.5px;
+    font-size: 11px;
+  }
+
+  .container {
+    width: 125px;
+    font-size: 10px;
+  }
+
+  .overlay-menuClosed {
+    width: 127px;
+  }
+  
+  .overlay-menuOpen {
+    width: 127px;
+    }
+
+  .btn-group button {
+    width: 125px;
+  }
+    
+  .btn-group button:hover {
+    color: white;
+    background-color: white;
+    width: 125px;
+    z-index: 1;
+  }
+
+  .order-description {
+    font-size: 10px;
+  }
+
+}

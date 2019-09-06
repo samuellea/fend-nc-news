@@ -11,47 +11,46 @@ class CommentList extends Component {
     isLoading: true
   }
   render() {
-    const {comments, isLoading} = this.state;
-    const {article_id, username} = this.props;
+    const { comments, isLoading } = this.state;
+    const { article_id, username } = this.props;
 
     return (
       <>
-      {isLoading ? <p>Loading comments...</p> : 
-
-        <section className="commentList">
-        <h4 className="commentsHeader">Comments ({comments.length})</h4>
-        <CommentInput addNewComment={this.addNewComment} article_id={article_id} username={username}/>
-           {comments.map(comment=> (
-              <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} username={username}/>
-              ))}
-        </section>
-      }
+        {isLoading ? <p>Loading comments...</p> :
+          <section className="commentList">
+            <h4 className="commentsHeader">Comments ({comments.length}) <span style={{ fontSize: 12, position: 'relative', bottom: '1px' }}>▼</span></h4>
+            <CommentInput addNewComment={this.addNewComment} article_id={article_id} username={username} />
+            {comments.map(comment => (
+              <CommentCard comment={comment} deleteComment={this.deleteComment} key={comment.comment_id} username={username} />
+            ))}
+          </section>
+        }
       </>
     );
   }
 
   addNewComment = newComment => {
-      this.setState(prevState => {
-        const {comments} = this.state;
-        return {
-          comments: [newComment, ...comments]
-        }
-      })
+    this.setState(prevState => {
+      const { comments } = this.state;
+      return {
+        comments: [newComment, ...comments]
+      }
+    })
   }
 
   deleteComment = (comment_id) => {
-    const {comments} = this.state;
+    const { comments } = this.state;
 
     if (window.confirm('Are you sure you want to delete your comment?')) {
       api.deleteCommentById(comment_id).catch(err => {
         this.setState({
           comments: comments
-        }, ()=>{
+        }, () => {
           alert('Comment could not be deleted!')
         })
       })
 
-      let indexToDelete = comments.findIndex((comment)=> comment.comment_id === comment_id);
+      let indexToDelete = comments.findIndex((comment) => comment.comment_id === comment_id);
       let commentsMinusDeleted = [...comments].reduce((acc, comment, i) => {
         if (i !== indexToDelete) acc.push(comment);
         return acc;
@@ -59,15 +58,15 @@ class CommentList extends Component {
       this.setState({
         comments: commentsMinusDeleted
       })
-  } 
+    }
   }
 
   componentDidMount() {
-    const {article_id} = this.props;
+    const { article_id } = this.props;
     api.getCommentsByArticleId(article_id)
-    .then(({comments}) => {
-      this.setState({comments, isLoading: false})
-    })
+      .then(({ comments }) => {
+        this.setState({ comments, isLoading: false })
+      })
 
   }
 }
