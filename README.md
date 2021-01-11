@@ -26,7 +26,7 @@ You will also see any lint errors in the console.
 
 ## Front End
 
-View the deployed application, hosted on Netlify here: : https://suspicious-brattain-e95481.netlify.com/
+View the deployed application, hosted on Netlify here: https://suspicious-brattain-e95481.netlify.com/
 
 ## Back End
 
